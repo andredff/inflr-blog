@@ -1,0 +1,15 @@
+<div class="cadastro-container">
+    <div>
+        <form [formGroup]="form">
+            <img src="https://www.inflr.com/assets/landing-page/img/logo_scroll.png" alt="inflr">
+            <br/>
+            <p>ACESSE SUA CONTA</p>
+            <input type="text" name="usuario" formControlName="username" placeholder="Usuário" required />
+            <input type="password" name="senha" formControlName="password" placeholder="Senha" required />
+            <button class="button primary" (click)=login()> Entrar </button>
+        </form>
+        <div class="new-user">
+            <p>Novo no Inflr? <a (click)="goRegister()">Inscreva-se agora</a></p>
+        </div>
+    </div>
+</div>

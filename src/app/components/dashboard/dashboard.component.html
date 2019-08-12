@@ -1,0 +1,52 @@
+<div class="header">
+  <img (click)="goHome()" src="https://www.inflr.com/assets/landing-page/img/logo.png" alt="inflr">
+  <div class="user">
+    <p (click)="displayLogout()">{{ usuario }}</p>
+    <a *ngIf="display" (click)="logout()">sair</a>
+  </div>
+</div>
+
+<section class="container column">
+  <div class="item header">
+    <p>Conectando marcas a pessoas influentes!</p>
+  </div>
+  <div class="item">
+    <div class="content">
+      <div>
+        <img src="https://www.w3schools.com/howto/img_avatar.png" style="width:80px" alt="Avatar">
+      </div>
+      <div class="text-area">
+        <form [formGroup]="form">
+          <textarea #postInput name="content" formControlName="content" id="content"
+            placeholder="Influencie aqui..."></textarea>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <button (click)="postar()">enviar</button>
+    </div>
+  </div>
+
+  <div style="flex-direction: column-reverse !important; display: flex;">
+    <div *ngFor="let article of articles" class="item">
+      <div #post class="content">
+        <div>
+          <img src="https://www.w3schools.com/howto/img_avatar.png" style="width:80px" alt="Avatar">
+        </div>
+        <div class="articles" id="{{article.id}}">
+          <p class="user">David Bowie</p>
+          <p class="date">1h atrás</p>
+          <p class="text">{{ article.content }}</p>
+          <div *ngIf="selectedItem === article">
+            <!-- <textarea *ngIf="displayComentar" name="content" placeholder="comentar..."></textarea> -->
+          </div>
+        </div>
+      </div>
+      <div class="article-footer">
+        <i class="material-icons">favorite</i>
+        <i (click)="comentar($event, article)" class="material-icons">message</i>
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,20 @@
+<div class="cadastro-container">
+  <div>
+    <form [formGroup]="form">
+      <img (click)="goHome()" src="https://www.inflr.com/assets/landing-page/img/logo_scroll.png" alt="inflr">
+      <br />
+      <p>CRIE SUA CONTA</p>
+      <input type="text" id="nome" name="nome" formControlName="first_name" placeholder="Nome" required />
+      <input type="text" id="sobrenome" name="sobrenome" formControlName="last_name" placeholder="Sobrenome" required />
+      <input type="text" id="usuario" name="usuario" formControlName="username" placeholder="Nome de usuário"
+        required />
+      <input type="password" id="senha" name="senha" formControlName="password" placeholder="Senha" minlength="6"
+        required />
+
+      <button class="button primary" (click)=cadastrar()> Enviar </button>
+    </form>
+    <div class="new-user">
+      <a [routerLink]="['/']">Voltar</a>
+    </div>
+  </div>
+</div>
